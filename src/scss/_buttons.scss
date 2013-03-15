@@ -1,0 +1,46 @@
+
+// Default style variables
+$btn-border-radius: .2em !default;
+$btn-font-family: Arial !default;
+$btn-font-weight: normal !default;
+$btn-border-color: #CCC !default;
+$btn-border: 1px solid $btn-border-color !default;
+$btn-padding: .4em !default;
+$btn-line-height: 1.1em !default;
+$btn-colour: #eee;
+
+/**
+## Buttons
+
+Button styles will apply to anything with the `.btn` class. This class is best applied to `<a>` or `<button>` elements 
+for the most consistent rendering.
+
+```
+<a class="btn">Link button</a> or <button class="btn">Real button</button>
+```
+### Variations
+
+#### Mini
+Applying the class `mini`
+
+*/
+
+.btn {
+	font-family: $btn-font-family;
+	font-weight: $btn-font-weight;
+	cursor: pointer;
+	@include border-radius($btn-border-radius);
+	border: $btn-border;
+	padding: $btn-padding;
+	line-height: $btn-line-height;
+	@include inline-block;
+	@include background-image(linear-gradient(scale-color($btn-colour, $lightness: 70%), scale-color($btn-colour, $lightness: -10%)));
+	background-color: scale-color($btn-colour, $lightness: -10%);
+	background-repeat: repeat-x;
+	
+	@include transition(background-position .1s linear);
+	
+	&:hover {
+		background-position: 0 -.8em;
+	}
+}

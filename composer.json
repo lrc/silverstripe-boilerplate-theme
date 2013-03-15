@@ -1,0 +1,17 @@
+{
+    "name": "lrc/silverstripe-boilerplate-theme",
+    "description": "A simple boilerplate theme for SilverStripe",
+    "type": "silverstripe-theme",
+    "keywords": ["silverstripe", "theme"],
+    "authors": [
+        {
+            "name": "Left, Right & Centre",
+            "homepage": "http://leftrightandcentre.com.au",
+			"email": "web@leftrightandcentre.com.au"
+        }
+    ],
+    "require": {
+        "composer/installers": "*",
+        "silverstripe/framework": ">=3.0"
+    }
+}

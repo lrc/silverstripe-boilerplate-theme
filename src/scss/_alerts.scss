@@ -1,0 +1,60 @@
+
+// Default colours
+$alert-colour-default: #c09853 !default;
+$alert-colour-success: #468847 !default;
+$alert-colour-error: #b94a48 !default;
+
+/**
+## Alerts
+Alerts are used for user notifications such as error or success messages in response to user actions.
+
+### Default
+```
+<p class="alert">Standard message</p>
+```
+
+### Variations
+
+#### Error / Danger
+```
+<p class="alert error">Bad message</p>
+```
+
+#### Success
+```
+<p class="alert success">Good message</p>
+```
+
+#### Block alerts
+Block alerts get a little more horizontal padding and no vertical padding. It is assumed that the contained elements
+(usually paragraph or heading tags) will have their own vertical margins.
+```
+<div class="alert block fixie">
+	<h3>Block alert</h3>
+	<p></p>
+</div>
+```
+*/
+.alert {
+	padding: .5em;
+	@include border-radius(.3em);
+	color: $alert-colour-default;
+	background-color: lighten($alert-colour-default, 40%);
+	border: 1px solid lighten($alert-colour-default, 20%);
+	
+	&.success {
+		color: $alert-colour-success;
+		background-color: lighten($alert-colour-success, 50%);
+		border: 1px solid lighten($alert-colour-success, 20%);
+	}
+	
+	&.error {
+		color: $alert-colour-error;
+		background-color: lighten($alert-colour-error, 42%);
+		border: 1px solid lighten($alert-colour-error, 20%);
+	}
+	
+	&.block {
+		padding: 0 1em;
+	}
+}
