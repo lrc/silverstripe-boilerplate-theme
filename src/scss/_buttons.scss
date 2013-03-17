@@ -3,11 +3,12 @@
 $btn-border-radius: .2em !default;
 $btn-font-family: Arial !default;
 $btn-font-weight: normal !default;
-$btn-border-color: #CCC !default;
-$btn-border: 1px solid $btn-border-color !default;
 $btn-padding: .4em !default;
 $btn-line-height: 1.1em !default;
-$btn-colour: #eee;
+$btn-colour: #eee !default;
+$btn-colour-primary: #49afcd !default;
+$btn-border-width: 1px !default;
+$btn-border-style: solid !default;
 
 /**
 ## Buttons
@@ -20,8 +21,31 @@ for the most consistent rendering.
 ```
 ### Variations
 
-#### Mini
-Applying the class `mini`
+#### Sizes
+Different size buttons? Apply the classes `big`, `small`, or `tiny` to get something other than the default.
+
+```
+<button class="btn big">Big button</button> 
+<button class="btn">Standard</button> 
+<button class="btn small">Small</button> 
+<button class="btn tiny">Tiny</button>
+```
+
+#### Primary
+When used in close proximity to other buttons, it's often a good idea to emphasize the primary button to prompt users
+as to which is the most likely next action.
+
+```
+<a class="btn primary">Primary</a> or <button class="btn primary">Primary</button>
+```
+
+#### De-emphasize
+Some buttons need to be de-emphasized.
+
+```
+<a class="btn link">Link button</a> or <button class="btn link">Real button</button>
+```
+
 
 */
 
@@ -30,9 +54,10 @@ Applying the class `mini`
 	font-weight: $btn-font-weight;
 	cursor: pointer;
 	@include border-radius($btn-border-radius);
-	border: $btn-border;
+	border: $btn-border-width $btn-border-style scale-color($btn-colour, $lightness: -20%);
 	padding: $btn-padding;
 	line-height: $btn-line-height;
+	vertical-align: middle;
 	@include inline-block;
 	@include background-image(linear-gradient(scale-color($btn-colour, $lightness: 70%), scale-color($btn-colour, $lightness: -10%)));
 	background-color: scale-color($btn-colour, $lightness: -10%);
@@ -42,5 +67,35 @@ Applying the class `mini`
 	
 	&:hover {
 		background-position: 0 -.8em;
+	}
+	
+	&.big {
+		font-size: 1.2em;
+	}
+	
+	&.small {
+		font-size: .7em;
+	}
+	
+	&.tiny {
+		font-size: .6em;
+	}
+	
+	&.primary {
+		@include background-image(linear-gradient(scale-color($btn-colour-primary, $lightness: 40%), scale-color($btn-colour-primary, $lightness: -10%)));
+		background-color: scale-color($btn-colour-primary, $lightness: -10%);
+		border: $btn-border-width $btn-border-style scale-color($btn-colour-primary, $lightness: -20%);
+		color: #fff;
+	}
+	
+	&.link {
+		background: transparent;
+		color: $link-colour;
+		border-color: transparent;
+		font-size: .8em;
+		
+		&:hover {
+			color: $link-colour-hover;
+		}
 	}
 }

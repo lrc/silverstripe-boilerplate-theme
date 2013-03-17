@@ -1,4 +1,3 @@
-@import url("editor.css");
 /*
  * Copyright (c) 2012 Left, Right & Centre 
  */
@@ -404,8 +403,31 @@ for the most consistent rendering.
 ```
 ### Variations
 
-#### Mini
-Applying the class `mini`
+#### Sizes
+Different size buttons? Apply the classes `big`, `small`, or `tiny` to get something other than the default.
+
+```
+<button class="btn big">Big button</button> 
+<button class="btn">Standard</button> 
+<button class="btn small">Small</button> 
+<button class="btn tiny">Tiny</button>
+```
+
+#### Primary
+When used in close proximity to other buttons, it's often a good idea to emphasize the primary button to prompt users
+as to which is the most likely next action.
+
+```
+<a class="btn primary">Primary</a> or <button class="btn primary">Primary</button>
+```
+
+#### De-emphasize
+Some buttons need to be de-emphasized.
+
+```
+<a class="btn link">Link button</a> or <button class="btn link">Real button</button>
+```
+
 
 */
 .btn {
@@ -417,9 +439,10 @@ Applying the class `mini`
   -ms-border-radius: 0.2em;
   -o-border-radius: 0.2em;
   border-radius: 0.2em;
-  border: 1px solid #cccccc;
+  border: 1px solid #bebebe;
   padding: 0.4em;
   line-height: 1.1em;
+  vertical-align: middle;
   display: -moz-inline-stack;
   display: inline-block;
   vertical-align: middle;
@@ -439,6 +462,28 @@ Applying the class `mini`
   transition: background-position 0.1s linear; }
   .btn:hover {
     background-position: 0 -0.8em; }
+  .btn.big {
+    font-size: 1.2em; }
+  .btn.small {
+    font-size: .7em; }
+  .btn.tiny {
+    font-size: .6em; }
+  .btn.primary {
+    background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #92cfe1), color-stop(100%, #36a4c4));
+    background-image: -webkit-linear-gradient(#92cfe1, #36a4c4);
+    background-image: -moz-linear-gradient(#92cfe1, #36a4c4);
+    background-image: -o-linear-gradient(#92cfe1, #36a4c4);
+    background-image: linear-gradient(#92cfe1, #36a4c4);
+    background-color: #36a4c4;
+    border: 1px solid #3092ae;
+    color: #fff; }
+  .btn.link {
+    background: transparent;
+    color: #00b0d8;
+    border-color: transparent;
+    font-size: .8em; }
+    .btn.link:hover {
+      color: #00b0d8; }
 
 /* Layout styles 
 -------------------------------------------- */
