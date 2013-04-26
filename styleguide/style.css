@@ -387,12 +387,18 @@ Block alerts get a little more horizontal padding and no vertical padding. It is
     color: #468847;
     background-color: #dfeedf;
     border: 1px solid #7aba7b; }
+    .alert.success h1, .alert.success h2, .alert.success h3, .alert.success h4 {
+      color: #468847; }
   .alert.error {
     color: #b94a48;
     background-color: #f4e3e3;
     border: 1px solid #d59392; }
+    .alert.error h1, .alert.error h2, .alert.error h3, .alert.error h4 {
+      color: #b94a48; }
   .alert.block {
     padding: 0 1em; }
+  .alert h1, .alert h2, .alert h3, .alert h4 {
+    color: #c09853; }
 
 /**
 ## Buttons
