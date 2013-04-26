@@ -435,6 +435,7 @@ Some buttons need to be de-emphasized.
 .btn {
   font-family: Verdana, Lucida, sans-serif;
   font-weight: normal;
+  color: white;
   cursor: pointer;
   -webkit-border-radius: 0.15em;
   -moz-border-radius: 0.15em;

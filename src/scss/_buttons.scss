@@ -3,6 +3,7 @@
 $btn-border-radius: .2em !default;
 $btn-font-family: Arial !default;
 $btn-font-weight: normal !default;
+$btn-font-colour: #fff !default;
 $btn-padding: .4em !default;
 $btn-line-height: 1.1em !default;
 $btn-colour: #eee !default;
@@ -52,6 +53,7 @@ Some buttons need to be de-emphasized.
 .btn {
 	font-family: $btn-font-family;
 	font-weight: $btn-font-weight;
+	color: $btn-font-colour;
 	cursor: pointer;
 	@include border-radius($btn-border-radius);
 	border: $btn-border-width $btn-border-style scale-color($btn-colour, $lightness: -20%);
