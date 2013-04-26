@@ -485,6 +485,15 @@ Some buttons need to be de-emphasized.
     .btn.link:hover {
       color: #00b0d8; }
 
+/*
+Document   : _tables.scss
+Author     : Simon Elvery
+Description:
+Specifies table formatting
+*/
+table {
+  vertical-align: top; }
+
 /* Layout styles 
 -------------------------------------------- */
 #body, #nav-main, header, footer {
