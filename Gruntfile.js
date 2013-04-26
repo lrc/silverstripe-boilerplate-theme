@@ -5,15 +5,24 @@ module.exports = function(grunt) {
 	// Project configuration.
 	grunt.initConfig({
 		uglify: {
-			production: {
+			library: {
 				options: {
-					preserveComments: 'some',
-					banner: '/*! Copyright (c) <%= grunt.template.today("yyyy") %> Left, Right & Centre */'
+					preserveComments: 'some'
 				},
 				files: {
-					'javascript/main.js': ['src/javascript/main.js'],
-					'javascript/forms.js': ['src/javascript/jquery.validate.js'],
-					'javascript/require-jquery.js': ['src/javascript/require-jquery.js']
+					'javascript/html5shiv.js': ['src/javascript/lib/html5shiv/src/html5shiv-printshiv.js'],
+					'javascript/require.js': ['src/javascript/require-config.js', 'src/javascript/lib/require/require.js'],
+					'javascript/jquery.js': ['src/javascript/lib/jquery/jquery-1.9.1.js'],
+					'javascript/jquery.autocomplete.js': ['src/javascript/lib/jquery-autocomplete/dist/jquery.autocomplete.js'],
+					'javascript/forms.js': ['src/javascript/lib/jquery-validation/jquery.validate.js']
+				}
+			},
+			project: {
+				options: {
+					preserveComments: 'some'
+				},
+				files: {
+					'javascript/main.js': ['src/javascript/main.js']
 				}
 			}
 		},
@@ -35,12 +44,16 @@ module.exports = function(grunt) {
 			}
 		},
 		watch: {
-			scripts: {
-				files: ['src/**/*.js'],
-				tasks: 'uglify'
+			scriptsLibrary: {
+				files: ['src/javascript/lib/**/*.js'],
+				tasks: 'uglify:library'
+			},
+			scriptsProject: {
+				files: ['src/javascript/*.js', 'src/javascript/**/*.js', '!src/javascript/lib/**'],
+				tasks: 'uglify:project'
 			},
 			styles: {
-				files: ['src/**/*.scss'],
+				files: ['src/scss/*.scss', 'src/scss/**/*.scss'],
 				tasks: 'compass'
 			}
 		}

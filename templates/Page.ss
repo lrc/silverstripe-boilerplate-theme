@@ -8,15 +8,13 @@
 		$MetaTags(false)
 		<link rel="shortcut icon" href="/favicon.ico" />
 
-		<!-- html5shiv needs to be included before all stylesheets -->
-		<!--[if lt IE 9]><script src="themes/default/javascript/html5.js"></script><![endif]-->
-
 		<link rel="stylesheet" type="text/css" href="themes/default/css/style.css" />
 		<!--[if lte IE 8]><link rel="stylesheet" href="themes/default/css/lte-ie8.css" /><![endif]-->
 		<!--[if lte IE 7]><link rel="stylesheet" href="themes/default/css/lte-ie7.css" /><![endif]-->
 		
-		<script data-main="themes/default/javascript/main" src="themes/default/javascript/require-jquery.js"></script>
+		<script data-main="themes/default/javascript/main" src="themes/default/javascript/require.js"></script>
 		<script>with(document.documentElement){className=className.replace(/no-js/,'js')}</script>
+		<!--[if lt IE 9]><script src="themes/default/javascript/html5shiv.js"></script><![endif]-->
 		
 		<% if SiteConfig.GA %>
 		<script type="text/javascript">
