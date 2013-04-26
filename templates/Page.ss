@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="$ContentLocale" class="no-js">
+	<% cached 'head', LastEdited, SiteConfig.LastEdited %>
     <head>
 		<% base_tag %>
 		<title><% if MetaTitle %>$MetaTitle<% else %>$Title<% end_if %> &raquo; $SiteConfig.Title</title>
@@ -28,12 +29,15 @@
 		</script>
 		<% end_if %>
     </head>
+	<% end_cached %>
     <body class="{$ClassName}">
 		<header class="clearfix">
 			<a href="#" id="logo"><img src="themes/default/images/logo.png" alt="Logo"></a>
 		</header>
 
+		<% cached 'navigation', $ID, List(Page).max(LastEdited), LinkingMode %>
 		<nav id="nav-main"><% include Navigation %></nav>
+		<% end_if %>
 
 		<div id="body" class="clearfix">$Layout</div><!-- body -->          
 
@@ -43,6 +47,8 @@
 				<% control FooterMenu %><a href="$Link" title="Go to the $Title.XML page">$MenuTitle.XML</a><% end_control %>
 			</div>				
 		</footer>
+		
+		<% cached 'GA-Footer', SiteConfig.LastEdited %>
 		<% if SiteConfig.GA %>
 		<script type="text/javascript">
 			(function() {
@@ -52,5 +58,6 @@
 			})();
 		</script>
 		<% end_if %>
+		<% end_cached %>
     </body>
 </html>
