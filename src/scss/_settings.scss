@@ -1,0 +1,42 @@
+/*
+This stylesheet contains all the basic settings like fonts, colours and spacings. 
+*/
+
+$font-family: Verdana, Lucida, sans-serif;
+$font-weight: normal;
+$font-size: 16px;
+
+$colour-primary: #aaa;
+$colour-secondary: #bbb;
+$colour-tertiary: #ccc;
+
+// Shades
+$colour-primary-light: scale-color($colour-primary, $lightness: 85%);
+$colour-secondary-light: scale-color($colour-secondary, $lightness: 95%);
+$colour-tertiary-light: scale-color($colour-tertiary, $lightness: 30%);
+
+
+$font-color: #666666;
+$font-color-heading: #00B0D8;
+$link-colour: #666666;
+$link-colour-hover: $colour-secondary;
+
+// The main page background variables
+$background-colour: #ffffff;
+$background-colour-content: #ffffff;
+
+
+// Override some button styles
+$btn-border-radius: .15em;
+$btn-font-family: $font-family;
+$btn-padding: 0.5em 0.7em 0.6em 0.7em;
+$btn-line-height: 1.1em;
+$btn-colour: #fff;
+$btn-background-colour: $colour-secondary;
+$btn-background-colour-primary: $colour-secondary;
+$btn-border-width: 0px;
+
+// Media query break points
+$break-large: 60em;
+$break-medium: 40em;
+$break-small: 30em;
